@@ -43,8 +43,6 @@ window.onload = function() {
     context = board.getContext("2d"); 
 
     //draw flappy bird
-    
-    //load images
     birdImg = new Image();
     birdImg.src = "./images/flappybird.gif";
     birdImg.onload = function() {
@@ -71,7 +69,6 @@ function update() {
 
     //bird
     velocityY += gravity;
-    // bird.y += velocityY;
     bird.y = Math.max(bird.y + velocityY, 0); 
     context.drawImage(birdImg, bird.x, bird.y, bird.width, bird.height);
 
@@ -141,7 +138,7 @@ function placePipes() {
 }
 
 function moveBird(e) {
-    if (e.code == "Space" || e.code == "ArrowUp" || e.code == "KeyX") {
+    if (e.code == "Space" || e.code == "ArrowUp" || e.code == "KeyW") {
         //jump
         velocityY = -6;
 
